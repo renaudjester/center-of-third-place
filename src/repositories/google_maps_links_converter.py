@@ -13,11 +13,17 @@ class GoogleMapsLinksConverterConnection:
 
 
 class GoogleMapsLinksConverter:
-    def __init__(self, connection: GoogleMapsLinksConverterConnection):
-        self.connection = connection
+    def __init__(
+        self, google_maps_links_converter_connection: GoogleMapsLinksConverterConnection
+    ):
+        self.google_maps_links_converter_connection = (
+            google_maps_links_converter_connection
+        )
 
     def from_short_to_long_url(self, link: str) -> str:
-        return self.connection.session.head(link, allow_redirects=True).url
+        return self.google_maps_links_converter_connection.session.head(
+            link, allow_redirects=True
+        ).url
 
     def get_lat_lon_from_long_link(self, link: str) -> list[float]:
         break_down_link = link.split("data=")[-1].split("?")[0]
@@ -37,3 +43,6 @@ class GoogleMapsLinksConverter:
         return self.get_lat_lon_from_long_link(
             self.from_short_to_long_url(link) if len(link) < 50 else link
         )
+
+    def close(self):
+        self.google_maps_links_converter_connection.session.close()

@@ -1,5 +1,5 @@
-from centeroid_calculator import CentroidCalculator
-from google_maps_links_converter import (
+from src.repositories.centeroid_calculator import CentroidCalculator
+from src.repositories.google_maps_links_converter import (
     GoogleMapsLinksConverter,
     GoogleMapsLinksConverterConnection,
 )
