@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: my-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - /Users/rjester/projects/center-of-third-place/data/:/data/db
