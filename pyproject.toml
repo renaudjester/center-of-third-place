@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "center-of-third-place"
+version = "0.1.0"
+description = "Let's give it a go"
+authors = ["renaudjester <renaud.jester@outlook.fr>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
