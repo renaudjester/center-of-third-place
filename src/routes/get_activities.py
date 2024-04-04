@@ -1,6 +1,5 @@
 from container import Container
 from fastapi import APIRouter
-from logger import logger
 from pydantic import BaseModel
 
 router = APIRouter()
